@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:p="http://www.springframework.org/schema/p"
+  xmlns:c="http://www.springframework.org/schema/c"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/context
+  http://www.springframework.org/schema/context/spring-context.xsd">
+  
+  <!--This is our Bean-->
+  <bean class="com.springcore.constructor.Certificate" name="cer">
+  	<constructor-arg value="Spring Boot"/>
+  </bean>
+  
+  
+  
+  <bean class="com.springcore.constructor.Person" name="person">
+  	<constructor-arg value="Gaurav"/>
+  	<constructor-arg name="personId"> <value>12</value></constructor-arg>
+  	<constructor-arg name="addresses">
+  		<list>
+  			<value>Pune India</value>
+  			<value>Gujrat India</value>
+  			<value>Ahilyanagar India</value>
+  		</list>
+  	</constructor-arg>
+  	<constructor-arg ref="cer"/>
+  </bean>
+	
+ 
+</beans>
